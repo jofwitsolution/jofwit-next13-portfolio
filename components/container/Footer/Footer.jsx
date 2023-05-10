@@ -1,8 +1,11 @@
-import React, { useState } from "react";
+"use client";
 
-import { images } from "../../constants";
-import { AppWrap, MotionWrap } from "../../wrapper";
-import { client } from "../../client";
+import { useState } from "react";
+import Image from "next/image";
+
+import { images } from "@constants";
+import { AppWrap, MotionWrap } from "@components/wrapper";
+
 import "./Footer.scss";
 
 const Footer = () => {
@@ -30,29 +33,21 @@ const Footer = () => {
       email: formData.email,
       message: formData.message,
     };
-
-    client
-      .create(contact)
-      .then(() => {
-        setLoading(false);
-        setIsFormSubmitted(true);
-      })
-      .catch((err) => console.log(err));
   };
 
   return (
     <>
-      <h2 className="head-text">chat with me</h2>
+      <h2 className="head-text">contact me</h2>
 
       <div className="app__footer-cards">
         <div className="app__footer-card ">
-          <img src={images.email} alt="email" />
+          <Image src={images.email} alt="email" width={50} height={50} />
           <a href="mailto:faleyeoluwafemi1@gmail.com" className="p-text">
             faleyeoluwafemi1@gmail.com
           </a>
         </div>
         <div className="app__footer-card">
-          <img src={images.mobile} alt="phone" />
+          <Image src={images.mobile} alt="phone" width={50} height={50} />
           <a href="tel:+2348137192766" className="p-text">
             +234 (813) 719-2766
           </a>
@@ -105,5 +100,5 @@ const Footer = () => {
 export default AppWrap(
   MotionWrap(Footer, "app__footer"),
   "contact",
-  "app__whitebg"
+  "app__blackbg"
 );

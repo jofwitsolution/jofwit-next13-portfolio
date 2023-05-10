@@ -1,80 +1,24 @@
+"use client";
+
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
-import { HiChevronLeft, HiChevronRight } from "react-icons/hi";
+import Image from "next/image";
 
-import { AppWrap, MotionWrap } from "../../wrapper";
-import { urlFor, client } from "../../client";
+import { AppWrap, MotionWrap } from "@components/wrapper";
+import { brands as myBrands } from "@data/brands";
 
 import "./Testimonial.scss";
 
 const Testimonial = () => {
   const [brands, setBrands] = useState([]);
-  const [testimonials, setTestimonials] = useState([]);
-  const [currentIndex, setCurrentIndex] = useState(0);
-
-  const handleClick = (index) => {
-    setCurrentIndex(index);
-  };
 
   useEffect(() => {
-    const testQuery = '*[_type == "testimonials"]';
-    const brandsQuery = '*[_type == "brands"]';
-
-    client.fetch(testQuery).then((data) => {
-      setTestimonials(data);
-    });
-    client.fetch(brandsQuery).then((data) => {
-      setBrands(data);
-    });
+    setBrands(myBrands);
   }, []);
-
-  const test = testimonials[currentIndex];
 
   return (
     <>
-      {testimonials.length && (
-        <>
-          <div className="app__testimonial-item app__flex">
-            <img src={urlFor(test?.imageurl)} alt={"testimonial"} />
-            <div className="app__testimonial-content">
-              <p className="p-text">{test.feedback}</p>
-              <div>
-                <h4 className="bold-text">{test.name}</h4>
-                <h5 className="bold-text">{test.company}</h5>
-              </div>
-            </div>
-          </div>
-
-          <div className="app__testimonial-btns app__flex">
-            <div
-              className="app__flex"
-              onClick={() =>
-                handleClick(
-                  currentIndex === 0
-                    ? testimonials.length - 1
-                    : currentIndex - 1
-                )
-              }
-            >
-              <HiChevronLeft />
-            </div>
-
-            <div
-              className="app__flex"
-              onClick={() =>
-                handleClick(
-                  currentIndex === testimonials.length - 1
-                    ? 0
-                    : currentIndex + 1
-                )
-              }
-            >
-              <HiChevronRight />
-            </div>
-          </div>
-        </>
-      )}
-
+      <h2 className="heading-primary">Brands</h2>
       <div className="app__testimonial-brands app__flex">
         {brands.map((brand) => (
           <motion.div
@@ -82,7 +26,12 @@ const Testimonial = () => {
             transition={{ duration: 0.5, type: "tween" }}
             key={brand._id}
           >
-            <img src={urlFor(brand.imgUrl)} alt={brand.name} />
+            <Image
+              src={brand.imgUrl}
+              alt={brand.name}
+              width={100}
+              height={100}
+            />
           </motion.div>
         ))}
       </div>
@@ -92,6 +41,6 @@ const Testimonial = () => {
 
 export default AppWrap(
   MotionWrap(Testimonial, "app__testimonial"),
-  "testimonials",
+  "brands",
   "app__primarybg"
 );

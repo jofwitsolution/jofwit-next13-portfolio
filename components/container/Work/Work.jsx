@@ -1,25 +1,19 @@
-import React, { useState, useEffect } from "react";
+"use client";
+
+import { useState, useEffect } from "react";
 import { AiFillEye, AiFillGithub } from "react-icons/ai";
 import { motion } from "framer-motion";
+import Image from "next/image";
 
-import { AppWrap, MotionWrap } from "../../wrapper";
-import { urlFor, client } from "../../client";
+import { AppWrap, MotionWrap } from "@components/wrapper";
 import "./Work.scss";
+import { works as myWorks } from "@data/works";
 
 const Work = () => {
   const [activeFilter, setActiveFilter] = useState("All");
   const [animateCard, setAnimateCard] = useState({ y: 0, opacity: 1 });
   const [works, setWorks] = useState([]);
   const [filterWork, setFilterWork] = useState([]);
-
-  useEffect(() => {
-    const query = '*[_type == "works"]';
-
-    client.fetch(query).then((data) => {
-      setWorks(data);
-      setFilterWork(data);
-    });
-  }, []);
 
   const handleWorkFilter = (item) => {
     setActiveFilter(item);
@@ -36,23 +30,33 @@ const Work = () => {
     }, 500);
   };
 
+  useEffect(() => {
+    setWorks(myWorks);
+    setFilterWork(myWorks);
+  }, []);
+
   return (
     <>
       <h2 className="heading-primary">My Portfolio</h2>
       <div className="app__work-filter">
-        {["All", "Hardware", "Web App", "Mobile App", "React JS"].map(
-          (item, index) => (
-            <div
-              key={index}
-              onClick={() => handleWorkFilter(item)}
-              className={`app__work-filter-item app__flex p-text ${
-                activeFilter === item ? "item-active" : ""
-              }`}
-            >
-              {item}
-            </div>
-          )
-        )}
+        {[
+          "All",
+          "Hardware",
+          "Web App",
+          "Mobile App",
+          "React JS",
+          "Next JS",
+        ].map((item, index) => (
+          <div
+            key={index}
+            onClick={() => handleWorkFilter(item)}
+            className={`app__work-filter-item app__flex p-text ${
+              activeFilter === item ? "item-active" : ""
+            }`}
+          >
+            {item}
+          </div>
+        ))}
       </div>
 
       <motion.div
@@ -63,7 +67,12 @@ const Work = () => {
         {filterWork.map((work, index) => (
           <div key={index} className="app__work-item app__flex">
             <div className="app__work-img app__flex">
-              <img src={urlFor(work.imgUrl)} alt={work.name} />
+              <Image
+                className="app__work-img-img"
+                fill
+                src={work.imgUrl}
+                alt={work.name}
+              />
               <motion.div
                 whileHover={{ opacity: [0, 1] }}
                 transition={{
@@ -106,7 +115,7 @@ const Work = () => {
               </p>
 
               <div className="app__work-tag app__flex">
-                <p className="p-text">{work.tags[1]}</p>
+                <p className="p-text">{work.tags[0]}</p>
               </div>
             </div>
           </div>

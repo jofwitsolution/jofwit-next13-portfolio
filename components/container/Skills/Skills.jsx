@@ -1,9 +1,13 @@
-import React, { useState, useEffect } from "react";
+"use client";
+
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import ReactTooltip from "react-tooltip";
+import Image from "next/image";
 
-import { AppWrap, MotionWrap } from "../../wrapper";
-import { urlFor, client } from "../../client";
+import { AppWrap, MotionWrap } from "@components/wrapper";
+import { experience as myExperience } from "@data/experience";
+import { skills as mySkills } from "@data/skills";
 
 import "./Skills.scss";
 
@@ -12,15 +16,9 @@ const Skills = () => {
   const [skills, setSkills] = useState([]);
 
   useEffect(() => {
-    const expQuery = '*[_type == "experiences"]';
-    const skillsQuery = '*[_type == "skills"]';
+    setExperience(myExperience);
 
-    client.fetch(expQuery).then((data) => {
-      setExperience(data);
-    });
-    client.fetch(skillsQuery).then((data) => {
-      setSkills(data);
-    });
+    setSkills(mySkills);
   }, []);
 
   return (
@@ -39,7 +37,12 @@ const Skills = () => {
                 className="app__flex"
                 style={{ backgroundColor: skill.bgColor }}
               >
-                <img src={urlFor(skill.icon)} alt={skill.name} />
+                <Image
+                  src={skill.icon}
+                  alt={skill.name}
+                  width={50}
+                  height={50}
+                />
               </div>
               <p className="p-text">{skill.name}</p>
             </motion.div>
