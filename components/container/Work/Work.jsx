@@ -72,6 +72,7 @@ const Work = () => {
                 fill
                 src={work.imgUrl}
                 alt={work.name}
+                sizes=""
               />
               <motion.div
                 whileHover={{ opacity: [0, 1] }}
