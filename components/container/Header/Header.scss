@@ -65,6 +65,13 @@
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
   }
 
+  .badge-cmp {
+    border: 3px solid #0000;
+    background: linear-gradient(#ffff, #ffff) padding-box,
+      linear-gradient(var(--angle), #ffff, #687aff) border-box;
+    animation: 8s rotate linear infinite;
+  }
+
   .tag-cmp {
     flex-direction: column;
     margin-top: 3rem;
@@ -158,6 +165,10 @@
     margin: 1.2rem;
     width: 90px;
     height: 90px;
+    border: 3px solid #0000;
+    background: linear-gradient(#ffff, #ffff) padding-box,
+      linear-gradient(var(--angle), #ffff, #687aff) border-box;
+    animation: 8s rotate linear infinite;
   }
   div:nth-child(3) {
     margin: 1.5rem;
@@ -169,6 +180,10 @@
     margin-left: -1rem;
     width: 150px;
     height: 150px;
+    border: 3px solid #0000;
+    background: linear-gradient(#ffff, #ffff) padding-box,
+      linear-gradient(var(--angle), #ffff, #687aff) border-box;
+    animation: 8s rotate linear infinite;
   }
 
   @media screen and (min-width: 2000px) {
@@ -282,4 +297,16 @@
   @media screen and (max-width: 1200px) {
     margin: 2rem 0;
   }
+}
+
+@keyframes rotate {
+  to {
+    --angle: 360deg;
+  }
+}
+
+@property --angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
 }
