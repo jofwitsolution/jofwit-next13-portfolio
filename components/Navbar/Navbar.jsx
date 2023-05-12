@@ -126,15 +126,15 @@ const Navbar = () => {
               </ul>
             </div>
 
-            <div className="flex w-full justify-center mt-[6rem]">
+            <div className="flex w-full justify-center mt-[3rem] bg-grayColor shadow-md rounded-md py-4">
               {session && (
                 <Link href={"/dashboard"} onClick={() => setToggle(false)}>
                   <Image
                     src={session.user.image}
                     alt="profile"
-                    width={50}
-                    height={50}
-                    className="rounded-full cursor-pointer"
+                    width={55}
+                    height={55}
+                    className="rounded-full cursor-pointer border-4 border-white"
                   />
                 </Link>
               )}
