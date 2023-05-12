@@ -92,6 +92,10 @@
 
 /* Tailwind Styles */
 
-.black_btn {
-  @apply rounded-full border border-black bg-black py-1.5 px-5 text-white transition-all hover:bg-white hover:text-black text-center text-sm font-inter flex items-center justify-center;
+.dashboard_menu {
+  @apply fixed bg-white w-[20%] top-0 left-0 bottom-0 pt-[5rem] shadow-md px-4;
+}
+
+.dashboard_main {
+  @apply w-[80%] ml-[20%] bg-white px-4;
 }
