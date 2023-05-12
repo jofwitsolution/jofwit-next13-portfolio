@@ -7,6 +7,11 @@ module.exports = {
   ],
   theme: {
     extend: {
+      screens: {
+        "900px": "900px",
+        "400px": "400px",
+        "300px": "300px",
+      },
       fontFamily: {
         satoshi: ["Satoshi", "sans-serif"],
         inter: ["Inter", "sans-serif"],

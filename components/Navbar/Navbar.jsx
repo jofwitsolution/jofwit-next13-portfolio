@@ -46,7 +46,7 @@ const Navbar = () => {
         )}
       </ul>
 
-      <div className="relative">
+      <div className="relative hidden 900px:block">
         {!session && (
           <Link href={"/signin"} className="font-bold text-secondaryColor">
             Log in
@@ -56,6 +56,7 @@ const Navbar = () => {
           <>
             <Image
               src={session.user.image}
+              alt="profile"
               width={37}
               height={37}
               className="rounded-full cursor-pointer"
@@ -88,19 +89,56 @@ const Navbar = () => {
           <motion.div
             whileInView={{ x: [200, 0] }}
             transition={{ duration: 0.85, ease: "easeOut" }}
+            className="app__navbar-menu-container"
           >
-            <HiX onClick={() => setToggle(false)} />
-            <ul>
-              {["home", "about", "work", "skills", "brands", "contact"].map(
-                (item) => (
-                  <li key={item}>
-                    <a href={`#${item}`} onClick={() => setToggle(false)}>
-                      {item}
-                    </a>
+            <div className="app__navbar-menu-container-1">
+              <HiX onClick={() => setToggle(false)} />
+              <ul>
+                {["home", "about", "work", "skills", "brands", "contact"].map(
+                  (item) => (
+                    <li key={item}>
+                      <a href={`#${item}`} onClick={() => setToggle(false)}>
+                        {item}
+                      </a>
+                    </li>
+                  )
+                )}
+                {!session ? (
+                  <li onClick={() => setToggle(false)}>
+                    <Link
+                      href={"/signin"}
+                      className="font-bold text-secondaryColor"
+                    >
+                      Log in
+                    </Link>
                   </li>
-                )
+                ) : (
+                  <li
+                    onClick={() => {
+                      setToggle(false);
+                      handleSignOut();
+                    }}
+                    className="cursor-pointer hover:text-secondaryColor"
+                  >
+                    Log out
+                  </li>
+                )}
+              </ul>
+            </div>
+
+            <div className="flex w-full justify-center mt-[6rem]">
+              {session && (
+                <Link href={"/dashboard"} onClick={() => setToggle(false)}>
+                  <Image
+                    src={session.user.image}
+                    alt="profile"
+                    width={50}
+                    height={50}
+                    className="rounded-full cursor-pointer"
+                  />
+                </Link>
               )}
-            </ul>
+            </div>
           </motion.div>
         )}
       </div>
