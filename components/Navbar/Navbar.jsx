@@ -120,7 +120,7 @@ const Navbar = () => {
               </ul>
             </div>
 
-            <div className="flex w-full justify-center mt-[3rem] bg-grayColor shadow-md rounded-md py-4">
+            <div className="flex w-full justify-center my-[3rem] bg-grayColor shadow-md rounded-md py-4">
               {session && (
                 <Link
                   href={"/dashboard"}

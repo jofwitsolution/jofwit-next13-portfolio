@@ -56,7 +56,7 @@ const DashboardMenu = () => {
 
   return (
     <div className="dashboard_menu">
-      <ul className="list-none mt-3">
+      <ul className="list-none my-3">
         <li className="text-[18px] py-2 text-center font-semibold hidden 900px:block">
           Content
         </li>
