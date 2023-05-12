@@ -26,12 +26,12 @@ const Skills = () => {
       <h2 className="heading-primary">Skills and Experience</h2>
       <div className="app__skills-container">
         <motion.div className="app__skills-list">
-          {skills.map((skill) => (
+          {skills.map((skill, index) => (
             <motion.div
               whileInView={{ opacity: [0, 1] }}
               transition={{ duration: 0.5 }}
               className="app__skills-item app__flex"
-              key={skill.name}
+              key={index + skill.name}
             >
               <div
                 className="app__flex"
@@ -49,14 +49,17 @@ const Skills = () => {
           ))}
         </motion.div>
         <motion.div className="app__skills-exp">
-          {experience?.map((experience) => (
-            <motion.div className="app__skills-exp-item" key={experience.year}>
+          {experience?.map((experience, index) => (
+            <motion.div
+              className="app__skills-exp-item"
+              key={index + experience.year}
+            >
               <div className="app__skills-exp-year">
                 <p className="bold-text">{experience.year}</p>
               </div>
               <motion.div className="app__skills-exp-works">
-                {experience.works.map((work) => (
-                  <div key={work.name}>
+                {experience.works.map((work, index) => (
+                  <div key={index + work.name}>
                     <motion.div
                       whileInView={{ opacity: [0, 1] }}
                       transition={{ duration: 0.5 }}

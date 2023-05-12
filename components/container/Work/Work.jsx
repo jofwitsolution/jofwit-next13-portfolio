@@ -71,7 +71,7 @@ const Work = () => {
                 className="app__work-img-img"
                 fill
                 src={work.imgUrl}
-                alt={work.name}
+                alt={work.title}
                 sizes=""
               />
               <motion.div

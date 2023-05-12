@@ -4,23 +4,36 @@ import { useState } from "react";
 import { HiMenuAlt4, HiX } from "react-icons/hi";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import { useSession, signOut } from "next-auth/react";
+import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 import { images } from "@constants";
 import "./Navbar.scss";
 
 const Navbar = () => {
+  const { data: session } = useSession();
   const [toggle, setToggle] = useState(false);
+  const [userToggle, setUserToggle] = useState(false);
+
+  const handleSignOut = async () => {
+    setUserToggle(false);
+
+    await signOut({ callbackUrl: "/" });
+  };
 
   return (
     <nav className="app__navbar">
       <div className="app__navbar-logo">
-        <Image
-          src={images.logo}
-          alt="logo"
-          width={"100%"}
-          height={"100%"}
-          priority
-        />
+        <Link href="/">
+          <Image
+            src={images.logo}
+            alt="logo"
+            width={"100%"}
+            height={"100%"}
+            priority
+          />
+        </Link>
       </div>
       <ul className="app__navbar-links">
         {["home", "about", "work", "skills", "brands", "contact"].map(
@@ -32,6 +45,41 @@ const Navbar = () => {
           )
         )}
       </ul>
+
+      <div className="relative">
+        {!session && (
+          <Link href={"/signin"} className="font-bold text-secondaryColor">
+            Log in
+          </Link>
+        )}
+        {session && (
+          <>
+            <Image
+              src={session.user.image}
+              width={37}
+              height={37}
+              className="rounded-full cursor-pointer"
+              onClick={() => setUserToggle((prev) => setUserToggle(!prev))}
+            />
+            {userToggle && (
+              <div className="absolute top-[50px] right-[30px] bg-white text-blackColor py-6 px-6 shadow-md">
+                <div
+                  onClick={() => setUserToggle(false)}
+                  className="mb-2 hover:text-secondaryColor"
+                >
+                  <Link href={"/dashboard"}>Dashboard</Link>
+                </div>
+                <div
+                  onClick={handleSignOut}
+                  className="cursor-pointer hover:text-secondaryColor"
+                >
+                  Log out
+                </div>
+              </div>
+            )}
+          </>
+        )}
+      </div>
 
       <div className="app__navbar-menu">
         <HiMenuAlt4 onClick={() => setToggle(true)} />
