@@ -1,4 +1,7 @@
+"use client";
+
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { GiSkills, GiCalendarHalfYear } from "react-icons/gi";
 import { BiUser } from "react-icons/bi";
 import { BsPersonWorkspace } from "react-icons/bs";
@@ -49,10 +52,14 @@ const menuItems = [
 ];
 
 const DashboardMenu = () => {
+  const router = useRouter();
+
   return (
     <div className="dashboard_menu">
       <ul className="list-none mt-3">
-        <li className="text-[18px] py-2 text-center font-semibold">Content</li>
+        <li className="text-[18px] py-2 text-center font-semibold hidden 900px:block">
+          Content
+        </li>
         {menuItems.map((item) => (
           <li key={item.title}>
             <Link
@@ -62,7 +69,7 @@ const DashboardMenu = () => {
               <span className="text-[24px] text-brownColor">
                 <item.icon />
               </span>{" "}
-              <span className="">{item.title}</span>
+              <span className="hidden 900px:inline">{item.title}</span>
             </Link>
           </li>
         ))}
