@@ -1,3 +1,6 @@
+import DashboardMenu from "@components/dashboard/DashboardMenu";
+import DashboardMain from "@components/dashboard/DashboardMain";
+
 import "@styles/globals.css";
 import "@styles/app.scss";
 
@@ -17,7 +20,12 @@ export const metadata = {
 };
 
 const Layout = ({ children }) => {
-  return <div className="pt-[5rem]">{children}</div>;
+  return (
+    <div className="pt-[5rem]">
+      <DashboardMenu />
+      <DashboardMain>{children}</DashboardMain>
+    </div>
+  );
 };
 
 export default Layout;
