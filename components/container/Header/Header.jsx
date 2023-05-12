@@ -53,8 +53,6 @@ const Header = () => {
           <Image
             src={images.profile}
             alt="profile_bg"
-            width={"100%"}
-            height={"100%"}
           />
         </div>
       </motion.div>
@@ -71,7 +69,7 @@ const Header = () => {
           images.react,
         ].map((circle, index) => (
           <div className="circle-cmp app__flex" key={`circle-${index}`}>
-            <Image src={circle} alt="circle" width={"100%"} height={"100%"} />
+            <Image src={circle} alt="circle" />
           </div>
         ))}
       </motion.div>

@@ -25,14 +25,8 @@ const Navbar = () => {
   return (
     <nav className="app__navbar">
       <div className="app__navbar-logo">
-        <Link href="/">
-          <Image
-            src={images.logo}
-            alt="logo"
-            width={"100%"}
-            height={"100%"}
-            priority
-          />
+        <Link href="/" as="/">
+          <Image src={images.logo} alt="logo" />
         </Link>
       </div>
       <ul className="app__navbar-links">
@@ -128,7 +122,11 @@ const Navbar = () => {
 
             <div className="flex w-full justify-center mt-[3rem] bg-grayColor shadow-md rounded-md py-4">
               {session && (
-                <Link href={"/dashboard"} onClick={() => setToggle(false)}>
+                <Link
+                  href={"/dashboard"}
+                  as={"/dashboard"}
+                  onClick={() => setToggle(false)}
+                >
                   <Image
                     src={session.user.image}
                     alt="profile"

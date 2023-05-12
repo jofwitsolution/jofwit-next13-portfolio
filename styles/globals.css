@@ -93,7 +93,7 @@
 /* Tailwind Styles */
 
 .dashboard_menu {
-  @apply fixed w-[38px] bg-white 900px:w-[22%] top-0 left-0 bottom-0 pt-[5rem] shadow-md 900px:px-4;
+  @apply fixed w-[38px] bg-white 900px:w-[22%] top-0 left-0 bottom-0 pt-[5rem] shadow-md 900px:px-4 overflow-y-auto;
 }
 
 .dashboard_main {
