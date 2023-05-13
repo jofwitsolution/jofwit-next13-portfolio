@@ -1,9 +1,6 @@
 import DashboardMenu from "@components/dashboard/DashboardMenu";
 import DashboardMain from "@components/dashboard/DashboardMain";
 
-import "@styles/globals.css";
-import "@styles/app.scss";
-
 export const metadata = {
   applicationName: "Portfolio",
   title: "Dashboard",

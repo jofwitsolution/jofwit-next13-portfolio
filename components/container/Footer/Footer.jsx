@@ -6,7 +6,7 @@ import Image from "next/image";
 import { images } from "@constants";
 import { AppWrap, MotionWrap } from "@components/wrapper";
 
-import "./Footer.scss";
+import "./Footer.css";
 
 const Footer = () => {
   const [formData, setFormData] = useState({

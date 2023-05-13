@@ -5,7 +5,7 @@ import Image from "next/image";
 
 import { AppWrap } from "@components/wrapper";
 import { images } from "@constants";
-import "./Header.scss";
+import "./Header.css";
 
 const scaleVariants = {
   whileInView: {
@@ -50,10 +50,7 @@ const Header = () => {
         className="app__header-img"
       >
         <div className="app__header-img-img">
-          <Image
-            src={images.profile}
-            alt="profile_bg"
-          />
+          <Image src={images.profile} alt="profile_bg" />
         </div>
       </motion.div>
 

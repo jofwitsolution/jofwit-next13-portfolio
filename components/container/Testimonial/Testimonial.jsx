@@ -7,7 +7,7 @@ import Image from "next/image";
 import { AppWrap, MotionWrap } from "@components/wrapper";
 import { brands as myBrands } from "@data/brands";
 
-import "./Testimonial.scss";
+import "./Testimonial.css";
 
 const Testimonial = () => {
   const [brands, setBrands] = useState([]);

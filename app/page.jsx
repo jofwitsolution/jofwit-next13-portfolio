@@ -10,6 +10,9 @@ import {
 const Home = () => {
   return (
     <div>
+      <div className="main">
+          <div className="gradient" />
+        </div>
       <Header />
       <About />
       <Work />

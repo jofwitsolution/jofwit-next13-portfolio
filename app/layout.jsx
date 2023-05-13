@@ -1,5 +1,5 @@
 import "@styles/globals.css";
-import "@styles/app.scss";
+import "@styles/app.css";
 
 import Navbar from "@components/Navbar/Navbar";
 import AuthProvider from "@components/special/AuthProvider";
@@ -25,10 +25,6 @@ const RootLayout = ({ children }) => (
   <html lang="en">
     <body>
       <AuthProvider>
-        <div className="main">
-          <div className="gradient" />
-        </div>
-
         <main className="app">
           <Navbar />
           {children}

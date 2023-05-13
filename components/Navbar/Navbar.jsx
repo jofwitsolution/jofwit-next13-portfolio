@@ -9,7 +9,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 
 import { images } from "@constants";
-import "./Navbar.scss";
+import "./Navbar.css";
 
 const Navbar = () => {
   const { data: session } = useSession();
@@ -26,10 +26,7 @@ const Navbar = () => {
     <nav className="app__navbar">
       <div className="app__navbar-logo">
         <Link href="/" as="/">
-          <Image
-            src={images.logo}
-            alt="logo"
-          />
+          <Image src={images.logo} alt="logo" />
         </Link>
       </div>
       <ul className="app__navbar-links">

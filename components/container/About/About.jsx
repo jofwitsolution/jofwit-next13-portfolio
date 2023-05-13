@@ -6,7 +6,7 @@ import Image from "next/image";
 
 import { AppWrap, MotionWrap } from "@components/wrapper";
 import { images } from "@constants";
-import "./About.scss";
+import "./About.css";
 
 const abouts = [
   {
