@@ -5,7 +5,6 @@ import Image from "next/image";
 
 import { AppWrap } from "@components/wrapper";
 import { images } from "@constants";
-import "./Header.css";
 
 const scaleVariants = {
   whileInView: {

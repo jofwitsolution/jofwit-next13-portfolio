@@ -6,27 +6,29 @@ import Image from "next/image";
 
 import { AppWrap, MotionWrap } from "@components/wrapper";
 import { images } from "@constants";
-import "./About.css";
 
 const abouts = [
   {
-    title: "Web Development",
-    description: "I am a good web developer.",
+    title: "Frontend Development",
+    description:
+      "I hone in on your brand vision to develop an impactful visual language for your online presence.",
     imgUrl: images.about01,
   },
   {
-    title: "Frontend Development",
-    description: "I am a good web developer.",
+    title: "Backend Development",
+    description:
+      "I design and develop polished presentations that add value to your speech, on and off the screen.",
     imgUrl: images.about02,
   },
   {
-    title: "Backend Development",
-    description: "I am a good web developer.",
+    title: "Web Development",
+    description:
+      "From custom frontend to sophisticated backend, I create an engaging experience online.",
     imgUrl: images.about03,
   },
   {
     title: "Embedded System",
-    description: "I am a good web developer.",
+    description: "I provide embedded system solutions.",
     imgUrl: images.about04,
   },
 ];

@@ -198,3 +198,11 @@
     color: var(--secondary-color);
   }
 }
+
+@import url("./css/Navbar.css");
+@import url("./css/About.css");
+@import url("./css/Footer.css");
+@import url("./css/Work.css");
+@import url("./css/Testimonial.css");
+@import url("./css/Skills.css");
+@import url("./css/Header.css");

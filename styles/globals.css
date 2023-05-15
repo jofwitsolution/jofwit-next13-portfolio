@@ -107,3 +107,7 @@
 .form_input {
   @apply w-full h-[35px] sm:h-[40px] border-[3px] border-lightGrayColor outline-none focus:border-secondaryColor px-2
 }
+
+.image_input {
+  @apply w-full h-[35px] sm:h-[40px] border-[3px] border-lightGrayColor px-2 flex justify-center items-center gap-4 cursor-pointer
+}

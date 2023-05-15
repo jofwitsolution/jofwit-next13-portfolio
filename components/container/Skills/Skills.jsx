@@ -9,8 +9,6 @@ import { AppWrap, MotionWrap } from "@components/wrapper";
 import { experience as myExperience } from "@data/experience";
 import { skills as mySkills } from "@data/skills";
 
-import "./Skills.css";
-
 const Skills = () => {
   const [experience, setExperience] = useState([]);
   const [skills, setSkills] = useState([]);

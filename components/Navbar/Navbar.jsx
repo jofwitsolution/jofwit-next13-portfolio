@@ -9,7 +9,6 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 
 import { images } from "@constants";
-import "./Navbar.css";
 
 const Navbar = () => {
   const { data: session } = useSession();

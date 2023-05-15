@@ -6,7 +6,6 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 
 import { AppWrap, MotionWrap } from "@components/wrapper";
-import "./Work.css";
 import { works as myWorks } from "@data/works";
 
 const Work = () => {

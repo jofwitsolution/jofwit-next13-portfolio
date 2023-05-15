@@ -10,22 +10,32 @@ export const experience = [
       {
         name: "Solar Installer",
         company: "Shelter Electronics",
-        desc: "Member of team or team for on field installation",
+        desc: "Member of team for on field installation of solar panels and inverters",
       },
     ],
   },
   {
-    year: 2018,
+    year: 2021,
     works: [
       {
-        name: "Embedded Programmer",
-        company: "Shelter Electronics",
-        desc: "Developed hardware and software",
+        name: "Web Developer and Network Manager",
+        company: "South West Resource Center",
+        desc: "Developed websites and managed network of computers",
+      },
+    ],
+  },
+  {
+    year: 2022,
+    works: [
+      {
+        name: "Web Developer",
+        company: "Devcent Trainings",
+        desc: "Developed websites and applications",
       },
       {
-        name: "Solar Installer",
-        company: "Shelter Electronics",
-        desc: "Member of team or team for on field installation",
+        name: "Web Instructor",
+        company: "Devcent Trainings",
+        desc: "Trained students",
       },
     ],
   },
