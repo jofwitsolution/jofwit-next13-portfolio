@@ -50,14 +50,15 @@
   font-size: 2.75rem;
   font-weight: 800;
   text-align: center;
-  background-image: linear-gradient(
+  /* background-image: linear-gradient(
     to right,
     var(--secondary-color),
     rgba(0, 0, 255, 0.6),
     var(--secondary-color)
   );
   color: transparent;
-  background-clip: text;
+  background-clip: text; */
+  color: var(--secondary-color);
   text-transform: capitalize;
 }
 .heading-primary span {
