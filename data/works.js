@@ -75,7 +75,7 @@ export const works = [
     title: "Jofwit Solution",
     description:
       "Empowering Your Business with Expert IT Solutions and Services",
-    projectLink: "https://jofwitsolution.vercel.app",
+    projectLink: "https://jofwitsolution.com",
     codeLink: "https://github.com",
     imgUrl: "/images/jofwit-solution.png",
     tags: ["Next JS", "All", "Web App"],
