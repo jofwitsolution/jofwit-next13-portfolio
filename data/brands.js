@@ -4,35 +4,35 @@ export const brands = [
     name: "Jofwit Solution",
   },
   {
-    imgUrl: "/images/jofwit.png",
-    name: "Jofwit Solution",
+    imgUrl: "/images/devcent-logo.png",
+    name: "Devcent",
   },
   {
-    imgUrl: "/images/jofwit.png",
-    name: "Jofwit Solution",
+    imgUrl: "/images/prompay-logo.png",
+    name: "Prompay",
   },
   {
-    imgUrl: "/images/jofwit.png",
-    name: "Jofwit Solution",
+    imgUrl: "/images/react.png",
+    name: "React JS",
   },
   {
-    imgUrl: "/images/jofwit.png",
-    name: "Jofwit Solution",
+    imgUrl: "/images/tailwind.png",
+    name: "Tailwind",
   },
   {
-    imgUrl: "/images/jofwit.png",
-    name: "Jofwit Solution",
+    imgUrl: "/images/arduino.png",
+    name: "Arduino",
   },
   {
-    imgUrl: "/images/jofwit.png",
-    name: "Jofwit Solution",
+    imgUrl: "/images/node.png",
+    name: "Node JS",
   },
   {
-    imgUrl: "/images/jofwit.png",
-    name: "Jofwit Solution",
+    imgUrl: "/images/css.png",
+    name: "CSS",
   },
   {
-    imgUrl: "/images/jofwit.png",
-    name: "Jofwit Solution",
+    imgUrl: "/images/javascript.png",
+    name: "Javascript",
   },
 ];
