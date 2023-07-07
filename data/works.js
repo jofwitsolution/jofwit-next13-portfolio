@@ -8,11 +8,27 @@ export const works = [
     tags: ["Next JS", "All", "Web App"],
   },
   {
+    title: "Devcent",
+    description: "Discover the limitless possibilities of the digital world",
+    projectLink: "https://www.devcent.net",
+    codeLink: "https://github.com",
+    imgUrl: "/images/devcent.png",
+    tags: ["Next JS", "All", "Web App"],
+  },
+  {
     title: "Linear App",
     description: "Meet the new standard for modern software development",
     projectLink: "https://linear.app",
     codeLink: "https://github.com",
     imgUrl: "/images/linear-app.png",
+    tags: ["React JS", "All", "Web App"],
+  },
+  {
+    title: "Globalflex",
+    description: "Your One-Stop Shop for Everything You Need",
+    projectLink: "https://globalflexshopping.store",
+    codeLink: "https://github.com",
+    imgUrl: "/images/globalflex.png",
     tags: ["React JS", "All", "Web App"],
   },
   {
