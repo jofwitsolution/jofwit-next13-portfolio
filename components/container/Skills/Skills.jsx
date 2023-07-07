@@ -26,8 +26,9 @@ const Skills = () => {
         <motion.div className="app__skills-list">
           {skills.map((skill, index) => (
             <motion.div
-              whileInView={{ opacity: [0, 1] }}
+              whileInView={{ opacity: [0, 1], y: [80, 0] }}
               transition={{ duration: 0.5 }}
+              viewport={{ once: true }}
               className="app__skills-item app__flex"
               key={index + skill.name}
             >
@@ -59,8 +60,9 @@ const Skills = () => {
                 {experience.works.map((work, index) => (
                   <div key={index + work.name}>
                     <motion.div
-                      whileInView={{ opacity: [0, 1] }}
+                      whileInView={{ opacity: [0, 1], y: [80, 0] }}
                       transition={{ duration: 0.5 }}
+                      viewport={{ once: true }}
                       className="app__skills-exp-work"
                       data-tip
                       data-for={work.name}
